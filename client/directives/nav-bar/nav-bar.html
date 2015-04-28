@@ -1,0 +1,59 @@
+<div  class="row navbar navbar-default navbar-static-top" role="navigation" style="margin: 0; background-color: white; height: 80px; width: 100%" ng-if="!Auth.isLogged()">
+  <div class="container-fluid" >
+    <div class="col-md-12">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-elements" style="margin-top:20px">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img alt="Logo" src="/assets/images/LogoSolidGuy1.gif">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="main-nav-elements" >
+        <ul class="nav navbar-nav navbar-right" style="margin-top:15px">
+          <li><a href="home">Home     </a></li>
+          <li><a href="about">About   </a></li>
+          <li><a href="login">Login   </a></li>
+          <li><a href="signup">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="row navbar navbar-default navbar-static-top" role="navigation" style="margin: 0;padding:0;border:0; background-color: white; height: 80px; width: 100%" ng-if="Auth.isLogged()">
+  <div class="container-fluid" >
+    <div class="col-md-12">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-elements-signedin" style="background-color: white; color:black">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img alt="Logo" src="/assets/images/LogoSolidGuy1.gif">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="main-nav-elements-signedin" style="margin-top:16px">
+        <ul class="nav navbar-nav">
+          <li><a href="/conversations">Text Messages</a></li>
+          <li><a href="/notes">Phone Calls</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="home">Home     </a></li>
+          <li><a href="about">About   </a></li>
+          <li><a href="" ng-click="Auth.logout()">Sign Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

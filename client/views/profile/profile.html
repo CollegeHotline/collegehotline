@@ -1,0 +1,65 @@
+<style> 
+body {
+	background-color: black; 
+	background:url('/assets/images/chalkboard.jpg') center center fixed;
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+</style>
+<div class="profile">
+	<div class="container-fluid">
+		<div class = "row">
+			<div class = "col-sm-4 ">
+				<div class="form-group text-center" >
+					<img src="/assets/images/empty_profile.png" height="320px" width="320px"/>
+					<div class="center-block">
+						<button type="button" class="btn btn-success" aria-label="Center Align">
+							Upload
+								<span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class = "col-sm-6 ">
+				<div class="white-text form-group" >
+					<label>First Name</label>
+					<input ng-model="firstName" type="text" class="form-control" placeholder="First Name">
+					<label>Last Name</label>
+					<input ng-model="lastName" type="text" class="form-control" placeholder="Last Name">
+					<label>Phone Number</label>
+					<input ng-model="phoneNumber" type="text" class="form-control" placeholder="Phone Number">
+					<label>School Name</label>
+					<input ng-model="schoolName" type="text" class="form-control" placeholder="School Name">
+					<label>Email</label>
+					<input ng-model="email" type="text" class="form-control" placeholder="joebruin@ucla.edu">
+					<div class="center-block text-center" style ="margin-top: 20px;">
+						<button type="button" class="btn btn-success" aria-label="Center Align">
+							Update
+							<span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class = "col-sm-2 "></div>
+		</div>
+		<div class = "row">
+			<div class = "col-sm-3 "></div>
+			<div class = "col-sm-6 ">
+				<form class="form-horizontal">
+					<div class="form-group" >
+						<h3 class="text-center white-text">Short Blurb (200 Characters MAX)</h3>
+						<textarea ng-model="question1" class="form-control" rows="3" placeholder="Write about you... i.e. : Yo, I’m Ayman. I’m a part time pre-med student and part time professional basketball player (you just haven’t heard of me yet). Lemme know if you got questions. Cuz I got answers."></textarea>
+						<div class="checkbox">
+							<button type="button" class="btn btn-success" aria-label="Center Align">
+							    <label>
+									<input type="checkbox">Post Name, Profile Picture, and Blurb on Our Homepage</input>
+							    </label>
+							</button>
+						 </div>
+					</div>
+				</form>
+			</div>
+			<div class = "col-sm-3"></div>				
+		</div>
+	</div>
+</div>

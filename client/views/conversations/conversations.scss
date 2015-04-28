@@ -1,0 +1,27 @@
+/**
+ * conversations.scss
+ */
+.conversations{
+	padding-top: 32px;
+	.badgeUnanswered{background: lightgreen; color: black;}
+	.exit{border-width:0px;background: #FF4747; color: black;}
+	.align-right{margin-bottom:0px; margin-right:10px;text-align: right}
+	.align-left {margin-bottom:0px; margin-left: 10px; text-align: left}
+	.currentVolunteerMessage{background-color: whitesmoke;margin-left:33%; text-align: right; border:solid; border-width:0px; border-color:gray;}
+	.otherVolunteerMessage{  background-color: whitesmoke;margin-left:33%; text-align: right; border:solid; border-width:0px; border-color:gray;}
+	.studentMessage{         background-color: whitesmoke;margin-right:33%;text-align: left;  border:solid; border-width:0px; border-color:gray;}
+	.message{margin:0px; display:inline-block; padding:15px; border:solid; border-width:2px}
+
+	.light-green{text-align: left;background-color: lightgreen; border-radius: 15px; border-width:0px;}
+	.light-blue {text-align: left;background-color: lightblue; border-radius: 15px; border-width:0px; }
+	.light-gray {background-color:lightgray; border-radius: 15px; border-width:0px;}
+	.background {background-color: black; background:url('/images/chalkboard.jpg') center center fixed}
+	.foreground {background-color:whitesmoke;}
+	.selected   {background-color:#FFFF80}
+	.even		{background-color:white}
+	.odd 		{background-color:#E6E6E6}
+	.header-font {opacity:0.9;font-family:'Shadows Into Light';color:white; font-weight:bold}
+	.placeholder{text-align: center}
+	.timestamp {color: black}
+}
+

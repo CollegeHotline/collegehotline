@@ -1,0 +1,54 @@
+<div id="et-main-area">
+  <div id="main-content">
+    <article id="post-217" class="post-217 page type-page status-publish hentry">
+      <div class="entry-content">
+        <div id="welcomeBack" class="et_pb_section et_pb_fullwidth_section et_section_regular">
+          <div class="et_pb_slider">
+            <div class="et_pb_slides">
+              <div class="et_pb_slide et_pb_bg_layout_dark et_pb_media_alignment_center" style='background-color:#ffffff;background-image:url(/assets/images/862490_29326952t.jpg);'>
+                <div class="et_pb_container clearfix">
+                  <div class="et_pb_slide_description">
+                    <h2>Welcome Back</h2>
+                    <div class="et_pb_slide_content">
+                      <h3>We&#8217;re happy to see you too.</h3>
+                    </div>
+                    <div class="et_pb_slide_content">
+                      <form ng-submit="vm.login()">
+                        <h2 class="form-signin-heading">Login</h2>
+                        <div class="row">
+                          <div class="col-sm-4"></div>
+                          <div class="col-sm-4">
+                            <label for="user_email" class="sr-only">Username</label>
+                            <input ng-model="vm.user.username" id="user_name" placeholder="Username" class="form-control" type="username" name="username" required>
+                          </div>
+                          <div class="col-sm-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                              <label for="user_pass" class="sr-only">Password</label>
+                              <input ng-model="vm.user.password" id="user_pass" placeholder="Password" class="form-control" type="password" name="password"  required>
+                          </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                              <button class="btn btn-lg btn-primary btn-block btn-warning" type="submit">Sign In</button>
+                            </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+                      </form>
+                      <pre ng-if="vm.error">{{ vm.error.msg }}</pre>
+                    </div>
+                  </div> <!-- .et_pb_slide_description -->
+                </div> <!-- .et_pb_container -->
+              </div> <!-- .et_pb_slide -->
+            </div> <!-- .et_pb_slides -->
+          </div> <!-- .et_pb_slider --> 
+        </div> <!-- .et_pb_section -->
+      </div> <!-- .entry-content -->        
+    </article> <!-- .et_pb_post -->
+  </div> <!-- #main-content -->
+</div> <!-- #et-main-area -->
+

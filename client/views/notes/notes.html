@@ -1,0 +1,93 @@
+<style>
+body {
+	background-color: black; 
+	background:url('/assets/images/chalkboard.jpg') center center fixed;
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+</style>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<div class="notes">
+	<div class = "row notes-row">
+		<form ng-submit = "loadCaller()" class = "text-center">
+			<button align="center" class="btn btn-lg btn-danger" type="submit">Load Current Caller Info</button>
+		</form>
+	</div>
+	<div class = "row notes-row">
+		<div class = "col-sm-3" >
+			<div class = "panel-header">
+				<h1 class = "notesHeader text-center">Basic Information</h1>
+			</div>
+			<div class="panel panel-default pre-scrollable">
+				<div>		
+					<form ng-submit="createNewNote()">
+						<div class="form-group" >
+							
+							<label>Phone Number</label>
+							<input type="text" class="form-control" placeholder="Phone Number" value = "{{phoneNumber}}" ng-model="phoneNumber" >
+							<label>First Name</label>
+							<input ng-model="firstName" type="text" class="form-control" placeholder="First Name">
+							<label>Last Name</label>
+							<input ng-model="lastName" type="text" class="form-control" placeholder="Last Name">
+							<label>School Name</label>
+							<input ng-model="schoolName" type="text" class="form-control" placeholder="School Name">
+							<label>Current Year in School</label>
+							<input ng-model="currentYear" type="text" class="form-control" placeholder="Example: Sophomore">
+							<label>Student's Address (for prize shipping)</label>
+							<input ng-model="studentAddress" type="text" class="form-control" placeholder="Home or School Address">
+						</div>
+						<div class="center-block">
+							<button type="submit" align="center">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div  class = "col-resize col-sm-6">
+			<div class = "panel-header">
+				<h1 class = "notesHeader text-center">Notes</h1>
+			</div>
+			<div class="panel panel-default pre-scrollable">
+				<form class="form-horizontal" ng-submit="saveQuestion1()">
+					<div class="form-group" >
+						<h3 class="text-center">Why are you calling today?</h3>
+						<textarea ng-model="question1" class="form-control" row notes-rows="3" placeholder="Write a reply..."></textarea>
+					</div>
+					<div class="center-block">
+						<button class="center-block" type="submit" >Save</button>
+					</div>
+				</form>
+
+				<form class="form-horizontal" ng-submit="saveQuestion2()">
+					<div class="form-group" >
+						<h3 class="text-center">What was discussed during this call?</h3>
+						<textarea ng-model="question2" class="form-control" row notes-rows="3" placeholder="Write a reply..."></textarea>
+					</div>
+					<div class="center-block">
+						<button type="submit" >Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class = "col-resize col-sm-3">
+			<div class = "panel-header">
+				<h1 class = "notesHeader text-center">Action Plan</h1>
+			</div>
+			<div class="panel panel-default pre-scrollable">
+				<div ng-repeat = "goal in goals">
+					<input type="checkbox"> {{goal.body}}</input>
+				</div>
+				<div ng-show="goals.length==0">
+					<h4 class="placeholder"> No Plans Yet. Let's Make Some! </h4>
+				</div>
+			</div>
+			<form ng-submit="createNewGoal()">
+				<input ng-model="newGoal" placeholder="Enter a short term goal" class="form-control" row notes-rows="3"></input>
+				<div class="center-block">
+					<button type="submit" class = "btn-md"> Update</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

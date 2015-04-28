@@ -1,0 +1,20 @@
+/**
+ * notes.scss
+ */
+
+.notes{
+	.pre-scrollable{
+		padding: 15px;
+		max-height: none;
+		min-height: 420;
+	}
+	.notesHeader {
+		opacity:0.9;
+		font-family:'Shadows Into Light';
+		color:white; 
+		font-weight:bold;
+	}
+	.notes-row{
+		padding: 16px 16px 16px 16px;
+	}
+}

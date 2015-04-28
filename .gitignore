@@ -5,3 +5,4 @@ client/styles/css
 dist/
 .sass-cache/
 .bangular-refresh
+.DS_Store

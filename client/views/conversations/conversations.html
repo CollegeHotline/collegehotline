@@ -1,0 +1,82 @@
+<style> 
+body {
+    background-color: black; 
+    background:url('/assets/images/chalkboard.jpg') center center fixed;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+</style>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<div class = "conversations container-fluid">
+    <div class = "row">
+        <div class = "col-sm-3">
+            <h1 class="header-font"  align = "center"> Team Inbox </h1>
+            <h4 class="header-font" align = "center"> Grab a text from here!</h4>
+            <div>
+                <ul class="list-group pre-scrollable">
+                    <li class="list-group-item" ng-show="inactiveConversations.length==0">      
+                        <h4 class="placeholder"> No new messages. </h4>
+                    </li>
+                    <li ng-repeat="conversation in inactiveConversations" class="list-group-item" ng-class="($index % 2 == 0) ? 'even' : 'odd' " ng-click="activateConversation($index, conversation.phoneNumber)">
+                        <form>
+                            <h4>{{conversation.messages[conversation.messageCount-1].text}}</h4>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class = "col-sm-6">
+            <div class = "row">
+                <h1 class="header-font" align = "center"> My Current Message </h1>
+                <h4 class="header-font"  align = "center"> Send a text to assist a student! </h4>
+                <!--div class="panel panel-default pre-scrollable"-->
+                <div class='foreground'>
+                    <ul id="currentMessage" class="list-group pre-scrollable">
+                        <!--li ng-repeat="message in currentConversation" class="list-group-item" ng-class="(message.isVolunteer==true) ? 'volunteerMessage' : 'studentMessage'"-->
+                        <li class="list-group-item" ng-show="currentConversation.length==0">        
+                            <h4 class="placeholder"> No message selected. </h4>
+                        </li>
+                        <li ng-repeat="message in currentConversation" class="list-group-item" ng-class="(message.isVolunteer==true) ? ((message.volunteerID==user._id) ? 'currentVolunteerMessage' : 'otherVolunteerMessage') : 'studentMessage'">
+                            <form>
+                                <p class="timestamp" ng-class="(message.isVolunteer==true) ? 'align-right' : 'align-left'">{{(message.isVolunteer==true) ? message.volunteerName : "Student"}} on {{message.timeStampString}}</p>
+                                <h4 class="message" ng-class="(message.isVolunteer==true) ? ((message.volunteerID==user._id) ? 'light-green' : 'light-blue') : 'light-gray'">{{message.text}}</h4>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "panel-footer text-center">
+                    <form ng-submit="sendMsg()">
+                        <input ng-model="newResponse" placeholder="Your Reply" class="form-control" rows="3"></input>
+                        <button type = "submit" class = "btn-lg"> Send </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class = "col-sm-3">
+            <h1 class="header-font"  align = "center">My Inbox</h1>
+            <h4 class="header-font" align = "center"> Wait for a reply! </h4>
+            <ul class="list-group pre-scrollable">
+                <li class="list-group-item" ng-show="activeConversations.length==0">        
+                    <h4 class="placeholder"> No active conversations.</h4>
+                </li>
+                <li ng-repeat="conversation in activeConversations" class="list-group-item" ng-click="openConversation($index, conversation.phoneNumber)" ng-class="(conversation.phoneNumber==currentConversationPhoneNumber) ? 'selected' : (($index % 2 == 0) ? 'even' : 'odd')" >
+                    <form>
+
+                        <button ng-class = "'exit'" align="right" class='badge pull-right' ng-click="deactivateConversation( $index, conversation.phoneNumber)">
+                            X
+                        </button>
+                    <!--ng-show="conversation.unansweredMessageCount>0"-->
+                        <span  class="badge" ng-class = "(conversation.unansweredMessageCount>0) ? 'badgeUnanswered' : ''">{{conversation.unansweredMessageCount}}</span>
+                        
+                        <h4>{{conversation.messages[conversation.messageCount-1].text}}</h4>
+                        <!--button type ="submit">Return to Queue</button-->
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
