@@ -5,5 +5,5 @@ module.exports = {
     uri: 'mongodb://localhost/CHRefactor-dev'
   },
   appNumber: 18582565412,
-  appEndPoint: "mapscallcenter141120025606@phone.plivo.com"
+  appEndPoint: "mapscallcenter141209072622@phone.plivo.com"
 };
